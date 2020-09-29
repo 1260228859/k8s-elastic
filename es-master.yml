@@ -37,7 +37,7 @@ metadata:
     role: master
 spec:
   serviceName: elasticsearch-master
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: elasticsearch
@@ -54,7 +54,7 @@ spec:
            claimName: pv-claim-elastic-master
       containers:
         - name: elasticsearch
-          image: dockerhub-pr.yeshj.com/ops/elasticsearch:7.2.0
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
           resources:
             requests:
               memory: 1Gi
